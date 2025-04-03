@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Digitech Computers - Sales & Expert Repairs in [Your City/Area]</title>
+    <style>
+        /* --- Basic Reset & Global Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for internal links */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding-top: 70px; /* Add padding to body to prevent content from hiding under fixed header */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            overflow: hidden; /* Contains floats */
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 0.8em;
+            color: #0a4a7d; /* Dark Blue */
+        }
+
+        h1 { /* Base H1 size, potentially overridden */
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5em;
+            padding-top: 1.5em; /* Space above section titles */
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a73e8; /* Standard Link Blue */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        /* --- Utility Classes --- */
+        .text-center {
+            text-align: center;
+        }
+
+        .highlight {
+            color: #d9534f; /* Reddish highlight */
+            font-weight: bold;
+        }
+
+        /* --- Header / Navbar --- */
+        .main-header {
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed; /* Make header sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure header is above other content */
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Space between logo and nav */
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .logo-area h1 {
+            margin: 0; /* Remove default margin */
+            font-size: 1.6rem; /* Adjust logo/name size */
+            color: #0a4a7d;
+        }
+
+        .logo-area h1 a {
+            color: inherit; /* Inherit color from h1 */
+            text-decoration: none;
+        }
+
+        /* Optional: Style if using an image logo */
+        /*
+        .logo-area img {
+            max-height: 50px;
+            display: block;
+        }
+        */
+
+        nav ul {
+            list-style: none;
+            display: flex; /* Align nav items horizontally */
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 20px; /* Space between nav items */
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 0; /* Add some vertical padding for easier clicking */
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent; /* For hover effect */
+        }
+
+        nav a:hover,
+        nav a.active { /* Style for active link (optional JS needed) */
+            color: #1a73e8;
+            border-bottom-color: #1a73e8; /* Underline effect on hover */
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: #0a4a7d url('hero-background.jpg') no-repeat center center/cover; /* Replace 'hero-background.jpg' */
+            color: #fff;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative; /* For overlay */
+            margin-top: 0; /* Remove potential top margin if body padding handles header space */
+        }
+
+        #hero::before { /* Optional overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 74, 125, 0.6); /* Dark blue overlay - slightly darker */
+        }
+
+        #hero .container {
+            position: relative; /* Ensure content is above overlay */
+            z-index: 1;
+        }
+
+        #hero h1 {
+            font-size: 2.8rem; /* Reset H1 size specific to Hero */
+            color: #fff; /* Override default heading color */
+            margin-bottom: 0.5em;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons button {
+            background: #f0ad4e; /* Orange */
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-buttons button:hover {
+            background: #ec971f; /* Darker Orange */
+        }
+
+        .cta-buttons button.secondary {
+             background: #fff;
+             color: #0a4a7d;
+             border: 1px solid #ccc;
+        }
+
+         .cta-buttons button.secondary:hover {
+             background: #eee;
+         }
+
+        .quick-contact {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* --- Problem/Solution Section --- */
+        #problem-solution {
+            background: #fff;
+        }
+
+        /* --- Services Section --- */
+        #services {
+            background: #e9ecef; /* Light Gray */
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 30px;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .service-item i { /* Placeholder for icons - Add FontAwesome or SVGs */
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+
+         .service-item h3 {
+             font-size: 1.3rem;
+             color: #333; /* Standard text color for service titles */
+         }
+
+        /* --- Why Choose Us Section --- */
+         #why-us {
+             background: #fff; /* Alternate background */
+         }
+        #why-us ul {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto; /* Center the list */
+        }
+
+        #why-us li {
+            background: #e9ecef; /* Light gray background for items */
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: flex; /* Align icon and text */
+            align-items: center;
+        }
+
+        #why-us li::before { /* Checkmark icon */
+             content: '✓';
+             color: #5cb85c; /* Green */
+             font-weight: bold;
+             font-size: 1.2em;
+             margin-right: 10px;
+        }
+
+        /* --- Testimonials Section --- */
+        #testimonials {
+             background: #e9ecef; /* Alternate background */
+        }
+        .testimonial-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+             gap: 20px;
+        }
+        .testimonial {
+            background: #f9f9f9;
+            border-left: 5px solid #1a73e8;
+            padding: 20px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+        .testimonial p {
+            margin-bottom: 0.5em;
+        }
+        .testimonial cite {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        /* --- Secondary CTA Section --- */
+        #cta {
+            background: #0a4a7d;
+            color: #fff;
+            text-align: center;
+        }
+        #cta h2 {
+            color: #fff; /* Override default heading color */
+        }
+        #cta button {
+            background: #f0ad4e; /* Orange */
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        #cta button:hover {
+             background: #ec971f; /* Darker Orange */
+        }
+         #cta a.button-link { /* Style links like buttons if needed */
+             display: inline-block; /* Allow padding etc. */
+             background: #fff;
+             color: #0a4a7d;
+             border: 1px solid #ccc;
+             padding: 12px 25px;
+             font-size: 1.1rem;
+             border-radius: 5px;
+             cursor: pointer;
+             margin: 10px;
+             transition: background-color 0.3s ease;
+             text-decoration: none;
+         }
+          #cta a.button-link:hover {
+              background: #eee;
+          }
+
+        /* --- Contact & Location Section --- */
+        #contact {
+            background: #fff; /* Alternate background */
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: start; /* Align items to the top */
+        }
+        .contact-details p {
+            margin-bottom: 0.5em; /* Less space between contact lines */
+        }
+        .contact-details strong {
+            display: inline-block;
+            min-width: 60px; /* Align labels */
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px; /* Space before footer */
+            font-size: 0.9rem;
+        }
+        .main-footer a {
+            color: #f0ad4e; /* Orange links in footer */
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px; /* Adjust body padding if header height increases */
+            }
+            .header-container {
+                flex-direction: column; /* Stack logo and nav */
+                align-items: center;
+            }
+            .logo-area {
+                margin-bottom: 10px; /* Space between logo and nav */
+            }
+            nav ul {
+                justify-content: center; /* Center nav items */
+                flex-wrap: wrap; /* Allow items to wrap */
+            }
+            nav li {
+                margin: 0 10px 10px 10px; /* Adjust spacing for wrapped items */
+            }
+
+            h1 { font-size: 2.2rem; } /* Base H1 */
+            #hero h1 { font-size: 2.2rem; } /* Hero H1 specific */
+            h2 { font-size: 1.8rem; }
+            #hero { min-height: 400px; }
+            #hero p { font-size: 1rem; }
+            .cta-buttons button { font-size: 1rem; padding: 10px 20px;}
+            .contact-info { grid-template-columns: 1fr; /* Stack contact info and map */ }
+            .map-container { margin-top: 20px; }
+        }
+
+        @media (max-width: 480px) {
+             body {
+                padding-top: 120px; /* Further adjust if needed */
+            }
+            h1 { font-size: 1.8rem; } /* Base H1 */
+            #hero h1 { font-size: 1.8rem; } /* Hero H1 specific */
+            #hero { min-height: 350px; padding: 40px 15px; }
+            #hero h1 { margin-bottom: 0.3em;}
+            #hero p { font-size: 0.9rem; margin-bottom: 1em;}
+            .cta-buttons button { display: block; width: 80%; margin: 10px auto; } /* Stack buttons */
+            .container { padding: 0 15px; }
+            section { padding: 30px 0; }
+            h2 { font-size: 1.6rem; padding-top: 1em; margin-bottom: 1em;}
+            nav li { margin: 0 8px 8px 8px; } /* Slightly tighter spacing */
+             .logo-area h1 { font-size: 1.4rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <!-- You can replace h1 with an <img> tag if you have a logo file -->
+                <h1><a href="#">New Digitech Computers</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- Add other links as needed -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <!-- Hero H1 uses #hero h1 style -->
+            <h1>Your Trusted Source for Tech Sales & Expert Repairs</h1>
+            <p>
+                From brand new laptops and custom PCs to fast, reliable repairs for your existing devices and professional CCTV installations, we've got your technology needs covered in [Your City/Area].
+            </p>
+            <div class="cta-buttons">
+                <button onclick="scrollToSection('contact')">Get a Free Repair Quote</button>
+                <button class="secondary" onclick="scrollToSection('contact')">Visit Our Shop</button> <!-- Or link to products page if separate -->
+            </div>
+            <div class="quick-contact">
+                Call Us Now: <a href="tel:[Your Phone Number]" style="color: #fff;">[Your Phone Number]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section id="problem-solution">
+        <div class="container text-center">
+            <h2>Slow Computer? Broken Screen? Need an Upgrade? <span class="highlight">We Can Help!</span></h2>
+            <p>
+                Technology issues can be frustrating and disruptive. Whether you need a performance boost, a critical repair, data recovery, or advice on the best new tech for your home or business, New Digitech Computers provides expert solutions you can rely on. We also offer professional CCTV setup for your peace of mind.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>💻 Computer & Laptop Sales</h3>
+                    <p>Wide selection of new and quality refurbished desktops & laptops. Top brands and custom-built options available. Expert advice to help you choose.</p>
+                </div>
+                <div class="service-item">
+                    <h3>🔧 Expert Repair Services</h3>
+                    <p>Fast diagnostics for PCs, Macs, Laptops. Screen replacements, virus removal, data recovery, hardware upgrades, software issues & more.</p>
+                </div>
+                <div class="service-item">
+                    <h3>📹 CCTV & Security Systems</h3>
+                    <p>Professional installation of CCTV cameras for homes and businesses. System setup, maintenance, and troubleshooting for enhanced security.</p>
+                </div>
+                 <div class="service-item">
+                    <h3>➕ Accessories & Peripherals</h3>
+                    <p>Keyboards, mice, monitors, cables, chargers, and other essential tech accessories to complete your setup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us">
+        <div class="container">
+            <h2>Why Choose New Digitech Computers?</h2>
+            <ul>
+                <li>Experienced Technicians: Years of hands-on experience diagnosing and fixing all kinds of tech problems.</li>
+                <li>Quality Guaranteed: We use reliable parts for repairs and sell quality products we stand behind.</li>
+                <li>One-Stop Shop: Get sales, service, repairs, and accessories all in one place.</li>
+                <li>Customer Focused: Friendly service, clear explanations, and transparent pricing.</li>
+                <li>Fast Turnaround: We strive for efficient service to get your tech back quickly.</li>
+                <li>Local & Trusted: Your neighborhood experts for all things tech in [Your City/Area].</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"New Digitech fixed my laptop screen super fast and at a great price. Highly recommend!"</p>
+                    <cite>- Sarah K.</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Needed a new computer for my business. They listened to my needs and set me up with the perfect system. Excellent service!"</p>
+                    <cite>- John D.</cite>
+                </div>
+                <div class="testimonial">
+                     <p>"Professional CCTV installation. The team was knowledgeable and efficient. Feel much safer now."</p>
+                     <cite>- [Business Name/Local Resident]</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secondary CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <h2>Ready to Solve Your Tech Needs?</h2>
+            <p>Don't wait! Whether you need an urgent repair, a new device, or a security consultation, contact New Digitech Computers today.</p>
+            <button onclick="scrollToSection('contact')">Request a Repair Estimate</button>
+            <a href="tel:[Your Phone Number]" class="button-link">Call Us Now: [Your Phone Number]</a>
+        </div>
+    </section>
+
+    <!-- Contact Information & Location Section -->
+    <section id="contact">
+        <div class="container">
+             <h2>Get In Touch or Visit Us</h2>
+            <div class="contact-info">
+                <div class="contact-details">
+                     <h3>New Digitech Computers</h3>
+                     <p><strong>Address:</strong> [Your Full Street Address, City, Postal Code]</p>
+                     <p><strong>Phone:</strong> <a href="tel:[Your Phone Number]">[Your Phone Number]</a></p>
+                     <p><strong>Email:</strong> <a href="mailto:[Your Business Email Address]">[Your Business Email Address]</a></p>
+                     <p><strong>Hours:</strong></p>
+                     <ul style="list-style: none; padding-left: 10px;"> <!-- Simple hours list -->
+                         <li>Mon - Fri: [Your Opening Hours, e.g., 9:00 AM - 6:00 PM]</li>
+                         <li>Saturday: [Your Saturday Hours, e.g., 10:00 AM - 4:00 PM]</li>
+                         <li>Sunday: [Closed or Your Sunday Hours]</li>
+                     </ul>
+                </div>
+                <div class="map-container">
+                    <!-- Go to Google Maps, find your location, click Share -> Embed a map, copy the HTML and paste it here -->
+                    <!-- Replace this placeholder with your Google Maps embed code -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0197878072576!2d144.9630576153167!3d-37.81410797975179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1678886888888!5m2!1sen!2sus"
+                        width="600"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <!-- End Google Maps Embed -->
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>Copyright © <span id="current-year"></span> New Digitech Computers. All Rights Reserved.</p>
+            <!-- Optional links: <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p> -->
+        </div>
+    </footer>
+
+    <script>
+        // --- Simple JavaScript ---
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth scroll function for internal links/buttons
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const header = document.querySelector('.main-header');
+            const headerHeight = header ? header.offsetHeight : 0; // Get header height
+
+            if (section) {
+                const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight; // Adjust for fixed header
+                window.scrollTo({
+                    top: sectionTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Add smooth scrolling to nav links
+        document.querySelectorAll('header nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                // Check if it's an internal link
+                if (targetId && targetId.startsWith('#')) {
+                     e.preventDefault(); // Prevent default jump
+                     scrollToSection(targetId.substring(1)); // Remove #
+                }
+            });
+        });
+
+        // Optional: Add 'active' class to nav link based on scroll position (more complex)
+        // This requires listening to the scroll event and calculating which section is currently in view.
+        // Example structure (might need refinement):
+        /*
+        const sections = document.querySelectorAll('section[id]');
+        const navLi = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const headerHeight = document.querySelector('.main-header').offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 50; // Add some offset
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+        */
+
+
+    </script>
+
+</body>
+</html>
